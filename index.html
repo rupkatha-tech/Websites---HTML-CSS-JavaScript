@@ -77,8 +77,8 @@
             }
         }
 
-        /* Hero Section */
-        #hero {
+        /* About me Section */
+        #aboutme {
             height: 100vh;
             display: flex;
             align-items: center;
@@ -89,7 +89,7 @@
             position: relative;
             overflow: hidden;
         }
-        #hero::after {
+        #aboutme::after {
             content: '';
             position: absolute;
             top: 0;
@@ -103,12 +103,12 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-100px); }
         }
-        #hero .content {
+        #aboutme .content {
             z-index: 1;
             max-width: 800px;
             animation: fadeInUp 1s ease-out;
         }
-        #hero img {
+        #aboutme img {
             width: 200px;
             height: 200px;
             border-radius: 50%;
@@ -118,20 +118,20 @@
             transition: transform 0.3s;
             animation: float 3s ease-in-out infinite;
         }
-        #hero img:hover {
+        #aboutme img:hover {
             transform: scale(1.05);
         }
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
-        #hero h1 {
+        #aboutme h1 {
             font-size: 3em;
             margin-bottom: 20px;
             font-weight: 700;
             color: white; /* Override for hero contrast */
         }
-        #hero p {
+        #aboutme p {
             font-size: 1.3em;
             max-width: 100%;
             margin: 0 auto;
@@ -140,7 +140,7 @@
             animation: fadeInUp 0.5s ease-out 0.5s forwards; /* Initial fade-in for container */
             position: relative;
         }
-        #hero p::after {
+        #aboutme p::after {
             content: '|';
             color: white;
             animation: blink 0.75s infinite;
@@ -308,17 +308,23 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#hero" onclick="smoothScroll(event, '#hero')">Home</a></li>
+            <li><a href="#aboutme" onclick="smoothScroll(event, '#hero')">About Me</a></li>
             <li><a href="#faqs" onclick="smoothScroll(event, '#faqs')">F&Qs</a></li>
             <li><a href="#connect" onclick="smoothScroll(event, '#connect')">Connect</a></li>
         </ul>
     </nav>
 
-    <section id="hero">
+    <section id="aboutme">
         <div class="content">
             <img src="image2.jpg" alt="Rupkatha Sarma Profile Picture">
             <h1>Hi, This is Rupkatha</h1>
-            <p>I am an undergrad student pursuing my BSc degree in the CSE program at Southeast University, located in Dhaka. I am well skilled in website development with HTML, CSS, JavaScript, and React. I am recently learning Python.</p>
+            <p>A Computer Science and Engineering student at Southeast University, passionate about turning ideas into elegant, functional, and visually appealing websites.
+
+I love blending creativity with logic — whether it’s designing smooth user interfaces, writing clean code, or experimenting with animations that bring life to a page. I enjoy learning and building small projects that help me grow one step closer to becoming a full-stack web developer.
+
+Beyond coding, I’m also a singer and guitarist, and I share covers on my YouTube channel “Bhumika.” Music and design both inspire me to create things that connect with people on an emotional level.
+
+My goal is to keep exploring — to learn, build, and glow quietly through my work.</p>
         </div>
     </section>
 
