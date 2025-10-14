@@ -213,6 +213,222 @@
 
         /* Connect Section */
         #connect {
+            padding: 60px 0;
+            background: #<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rupkatha Sarma - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #B87C4C; /* Smaller texts */
+            background: linear-gradient(135deg, #FCF9EA 0%, #E2A16F 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+        /* Subtle Particle Background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(67, 34, 35, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(226, 161, 111, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(230, 207, 169, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(252, 249, 234, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        nav a {
+            color: #432323; /* Bigger texts for nav */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #B87C4C;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 20px;
+            }
+            nav a {
+                font-size: 0.9em;
+            }
+        }
+
+        /* About me Section */
+        #aboutme {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(45deg, #432323 0%, #B87C4C 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        #aboutme::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="wave" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M0 50 Q25 30 50 50 T100 50" stroke="rgba(255,255,255,0.1)" fill="none" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23wave)"/></svg>');
+            animation: wave 20s linear infinite;
+        }
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100px); }
+        }
+        #aboutme .content {
+            z-index: 1;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+        #aboutme img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            animation: float 3s ease-in-out infinite;
+        }
+        #aboutme img:hover {
+            transform: scale(1.05);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        #aboutme h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: white; /* Override for hero contrast */
+        }
+        #aboutme p {
+            font-size: 1.3em;
+            max-width: 100%;
+            margin: 0 auto;
+            color: white; /* Hero text white for contrast */
+            opacity: 0;
+            animation: fadeInUp 0.5s ease-out 0.5s forwards; /* Initial fade-in for container */
+            position: relative;
+        }
+        #aboutme p::after {
+            content: '|';
+            color: white;
+            animation: blink 0.75s infinite;
+            margin-left: 2px;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* F&Qs Section (formerly Contact) */
+        #faqs {
+            padding: 80px 0;
+            background: #E2A16F;
+        }
+        #faqs h2 {
+            color: #432323; /* Bigger texts */
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s;
+        }
+        form.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        input, textarea {
+            padding: 15px;
+            border: 2px solid #B87C4C;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+            background: #FCF9EA;
+            color: #B87C4C; /* Smaller texts */
+        }
+        input::placeholder, textarea::placeholder {
+            color: #B87C4C;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #432323;
+            box-shadow: 0 0 10px rgba(67, 34, 35, 0.2);
+        }
+        button {
+            background: linear-gradient(45deg, #432323, #B87C4C);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Connect Section */
+        #connect {
             padding: 80px 0;
             background: #E2A16F;
             color: #B87C4C; /* Smaller texts */
@@ -427,7 +643,221 @@ My goal is to keep exploring — to learn, build, and glow quietly through my wo
         });
     </script>
 </body>
+</html>;
+            color: #B87C4C; /* Smaller texts */
+            text-align: center;
+        }
+        #connect h2 {
+            font-size: 0.8em;
+            margin-bottom: 30px;
+            color: #432323; /* Bigger texts */
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #FCF9EA;
+            color: #B87C4C; /* Icons */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 0.2em;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .social-links a:hover {
+            background: #432323;
+            color: white;
+            transform: scale(1.1) translateY(-5px); /* Improved hover: scale + lift, no rotation */
+        }
+        .social-links a::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #432323;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.3em;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .social-links a:hover::after {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #hero h1 { font-size: 2em; }
+            #hero p { 
+                font-size: 1.1em; 
+                max-width: 90%; /* Extra room on tablet */
+                line-height: 1.5; /* Better wrapping */
+            }
+            #hero img { width: 150px; height: 150px; }
+            .social-links { gap: 20px; }
+            .social-links a { width: 50px; height: 50px; font-size: 1.2em; }
+            nav ul { gap: 15px; }
+            nav { padding: 10px 0; }
+        }
+        @media (max-width: 480px) {
+            .container { padding: 0 10px; }
+            #hero, #faqs, #connect { padding: 50px 0; }
+            #hero p { 
+                font-size: 1em; 
+                max-width: 95%; 
+                padding: 0 5%; /* Ensure full width on mobile */
+            }
+            nav ul { flex-direction: column; gap: 10px; }
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#aboutme" onclick="smoothScroll(event, '#hero')">About Me</a></li>
+            <li><a href="#faqs" onclick="smoothScroll(event, '#faqs')">F&Qs</a></li>
+            <li><a href="#connect" onclick="smoothScroll(event, '#connect')">Connect</a></li>
+        </ul>
+    </nav>
+
+    <section id="aboutme">
+        <div class="content">
+            <img src="image2.jpg" alt="Rupkatha Sarma Profile Picture">
+            <h1>Hi, This is Rupkatha</h1>
+            <p>A Computer Science and Engineering student at Southeast University, passionate about turning ideas into elegant, functional, and visually appealing websites.
+
+I love blending creativity with logic — whether it’s designing smooth user interfaces, writing clean code, or experimenting with animations that bring life to a page. I enjoy learning and building small projects that help me grow one step closer to becoming a full-stack web developer.
+
+Beyond coding, I’m also a singer and guitarist, and I share covers on my YouTube channel “Bhumika.” Music and design both inspire me to create things that connect with people on an emotional level.
+
+My goal is to keep exploring — to learn, build, and glow quietly through my work.</p>
+        </div>
+    </section>
+
+    <section id="faqs" class="animate-on-scroll">
+        <div class="container">
+            <h2 class="animate-on-scroll">Ask Me a Question (F&Qs)</h2>
+            <form class="animate-on-scroll" action="https://formspree.io/f/your-endpoint-here" method="POST" onsubmit="return validateForm()">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Question or Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="connect" class="animate-on-scroll">
+        <div class="container">
+            <h2 class="animate-on-scroll">Connect With Me</h2>
+            <div class="social-links">
+                <a href="https://www.fiverr.com/rupkatha_sarma/buying?source=avatar_menu_profile" target="_blank" data-tooltip="Hire Me on Fiverr"><i class="fas fa-briefcase"></i></a>
+                <a href="https://www.linkedin.com/in/rupkatha-sarma-1a2832342/" target="_blank" data-tooltip="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/rupkatha-tech" target="_blank" data-tooltip="Follow on GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/rup_being_rup/" target="_blank" data-tooltip="Follow on Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth Scrolling
+        function smoothScroll(event, target) {
+            event.preventDefault();
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form Validation
+        function validateForm() {
+            const name = document.querySelector('input[name="name"]').value.trim();
+            const email = document.querySelector('input[name="email"]').value.trim();
+            const message = document.querySelector('textarea[name="message"]').value.trim();
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                return false;
+            }
+            if (!email.includes('@')) {
+                alert('Please enter a valid email.');
+                return false;
+            }
+            return true;
+        }
+
+        // Responsive Typing Effect for Bio
+        function typeWriter(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = ''; // Clear initial text
+            const cursor = document.createElement('span');
+            cursor.innerHTML = '|';
+            cursor.style.color = 'white';
+            cursor.style.animation = 'blink 0.75s infinite';
+            element.appendChild(cursor);
+
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML = text.substring(0, i + 1) + '|';
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    // Remove cursor after typing
+                    element.innerHTML = text;
+                }
+            }
+            type();
+        }
+
+        // Scroll Animations (using IntersectionObserver for efficiency)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Initialize Typing on Load
+        window.addEventListener('load', () => {
+            const bio = document.querySelector('#hero p');
+            const fullText = "I am an undergrad student pursuing my BSc degree in the CSE program at Southeast University, located in Dhaka. I am well skilled in website development with HTML, CSS, JavaScript, and React. I am recently learning Python.";
+            bio.style.opacity = '1';
+            setTimeout(() => {
+                typeWriter(bio, fullText, 40); // 40ms per char for smooth, responsive typing
+            }, 500); // Delay after h1 fade-in
+        });
+    </script>
+</body>
 </html>
+
 
 
 
